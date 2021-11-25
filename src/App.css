@@ -3,18 +3,25 @@
   padding: 0;
   margin: 0;
   display: flex;
-  position: fixed;
-  width: 100%;
+  position: absolute;
   height: 100%;
-  left: 0;
-  top: 0;
+  width: 100%;
 }
 
 body {
   background: var(--color-bg);
+  margin: 0;
+  padding: 0;
 }
 
 a {
   color: unset;
   text-decoration: none;
+}
+
+@media only screen and (orientation: portrait) {
+  body {
+    height: 100vw;
+    transform: rotate(90deg);
+  }
 }

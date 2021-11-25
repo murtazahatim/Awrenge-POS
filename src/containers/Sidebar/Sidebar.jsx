@@ -1,11 +1,11 @@
-import React from "react";
-import SidebarLink from "../../components/SidebarLink/SidebarLink";
+import React, { useState } from "react";
+import SidebarLinks from "../../components/SidebarLinks/SidebarLinks";
 import "./sidebar.css";
+import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import { logo, exit } from "./imports";
-import { useLocation } from "react-router-dom";
 
 const Sidebar = () => {
-  let location = useLocation();
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
     <div className="bora__sidebar">
@@ -13,19 +13,10 @@ const Sidebar = () => {
         <img src={logo} alt="logo" />
       </div>
       <div className="bora__sidebar-nav">
-        <SidebarLink
-          page="home"
-          selected={location.pathname === "/home" || location.pathname === "/"}
-        />
-        <SidebarLink
-          page="discount-vouchers"
-          selected={location.pathname === "/discount-vouchers"}
-        />
-        <SidebarLink page="analytics-dashboard" />
-        <SidebarLink page="menu-management" />
+        <SidebarLinks />
       </div>
       <div className="bora__sidebar-exit">
-        <img src={exit} alt="exit" />
+        <img className="bora__sidebar-exit__icon" src={exit} alt="exit" />
       </div>
     </div>
   );

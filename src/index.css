@@ -3,6 +3,9 @@
 :root {
   --font-family: "Barlow Condensed", sans-serif;
 
+  --filter-accent: invert(79%) sepia(48%) saturate(4330%) hue-rotate(315deg)
+    brightness(95%) contrast(92%);
+
   --color-bg: #393c49;
   --color-panel: #1f1d2b;
   --color-accent: #ea7c69;
