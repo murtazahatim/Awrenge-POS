@@ -1,0 +1,43 @@
+.bora__sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-panel);
+}
+
+.bora__sidebar-logo {
+  background-color: var(--color-logo-bg);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bora__sidebar-logo img {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+}
+
+.bora__sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 1500px) {
+  .bora__sidebar-logo img {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.3rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .bora__sidebar {
+    flex: 2;
+  }
+}

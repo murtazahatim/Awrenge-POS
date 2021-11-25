@@ -1,0 +1,13 @@
+.bora__sidebar-nav_link {
+  background-color: var(--color-accent);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bora__sidebar-nav_link-tag img {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.75rem;
+}
