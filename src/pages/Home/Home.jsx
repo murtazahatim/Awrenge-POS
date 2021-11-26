@@ -1,10 +1,12 @@
 import React from "react";
 import "./home.css";
+import { MenuPanel, OrderPanel } from "../../containers";
 
 const Home = () => {
   return (
     <div className="bora__home">
-      <h1>Home</h1>
+      <MenuPanel />
+      <OrderPanel />
     </div>
   );
 };

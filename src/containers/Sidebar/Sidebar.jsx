@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import SidebarLinks from "../../components/SidebarLinks/SidebarLinks";
 import "./sidebar.css";
-import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import { logo, exit } from "./imports";
 
 const Sidebar = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
-
   return (
     <div className="bora__sidebar">
       <div className="bora__sidebar-logo">

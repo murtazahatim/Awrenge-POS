@@ -1,3 +1,6 @@
 .bora__home {
   flex: 21;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
