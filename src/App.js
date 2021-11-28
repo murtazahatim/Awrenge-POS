@@ -16,15 +16,18 @@ import { useAuth0 } from "@auth0/auth0-react";
 function App() {
   const [db, setDb] = useState();
   let location = useLocation();
-  let { isLoading, isAuthenticated } = useAuth0();
+  let { user, isLoading, isAuthenticated } = useAuth0();
 
   useEffect(() => {
-    const initDB = async () => {
-      const _db = await Database.get();
-      setDb(_db);
-    };
-    initDB();
-  }, []);
+    if (isAuthenticated) {
+      const initDB = async () => {
+        const _db = await Database.get(user);
+        setDb(_db);
+      };
+
+      initDB();
+    }
+  }, [isAuthenticated]);
 
   if (isLoading) {
     return "Loading";

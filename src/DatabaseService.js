@@ -16,13 +16,15 @@ addRxPlugin(RxDBLeaderElectionPlugin);
 addRxPlugin(RxDBReplicationCouchDBPlugin);
 addRxPlugin(RxDBNoValidatePlugin);
 
-const syncURL = "http://localhost:5984/";
-const dbName = "awrangedb";
+const syncURL = "https://awrenge.com:5984/";
+let dbName = "awrangedb";
 
 let dbPromise = null;
 
-const _create = async () => {
+const _create = async (userDetails) => {
   //removeRxDatabase(dbName, getRxStoragePouch("idb"));
+
+  dbName += "-" + userDetails.user_id;
 
   const db = await createRxDatabase({
     name: dbName,
@@ -52,7 +54,7 @@ const _create = async () => {
     .map((col) => col.name)
     .map((colName) =>
       db[colName].syncCouchDB({
-        remote: syncURL + colName + "/",
+        remote: syncURL + colName + "-" + userDetails.user_id + "/",
         options: {
           live: true,
           retry: true,
@@ -63,7 +65,7 @@ const _create = async () => {
   return db;
 };
 
-export const get = () => {
-  if (!dbPromise) dbPromise = _create();
+export const get = (userDetails) => {
+  if (!dbPromise) dbPromise = _create(userDetails);
   return dbPromise;
 };
