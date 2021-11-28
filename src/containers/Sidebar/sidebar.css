@@ -8,7 +8,7 @@
 }
 
 .bora__sidebar-logo {
-  background-color: var(--color-logo-bg);
+  border: #ffffff solid 0.5px;
   border-radius: 12px;
   display: flex;
   justify-content: center;
