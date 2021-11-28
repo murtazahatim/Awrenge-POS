@@ -8,7 +8,7 @@ import {
   AnalyticsDashboard,
   MenuManagement,
 } from "./pages";
-import { Sidebar } from "./containers";
+import { Sidebar, Header } from "./containers";
 import { Provider } from "rxdb-hooks";
 import * as Database from "./DatabaseService";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -20,6 +20,7 @@ function App() {
 
   useEffect(() => {
     if (isAuthenticated) {
+      console.log(user);
       const initDB = async () => {
         const _db = await Database.get(user);
         setDb(_db);
@@ -71,6 +72,7 @@ function App() {
             }
           />
         </Routes>
+        {location.pathname !== "/login" && <Header />}
       </div>
     </Provider>
   );

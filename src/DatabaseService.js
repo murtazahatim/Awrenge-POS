@@ -10,21 +10,24 @@ import { RxDBLeaderElectionPlugin } from "rxdb/plugins/leader-election";
 import { RxDBReplicationCouchDBPlugin } from "rxdb/plugins/replication-couchdb";
 import { RxDBNoValidatePlugin } from "rxdb/plugins/no-validate";
 
+const md5 = require("blueimp-md5");
 addPouchPlugin(require("pouchdb-adapter-idb"));
 addPouchPlugin(require("pouchdb-adapter-http"));
 addRxPlugin(RxDBLeaderElectionPlugin);
 addRxPlugin(RxDBReplicationCouchDBPlugin);
 addRxPlugin(RxDBNoValidatePlugin);
 
-const syncURL = "https://awrenge.com:5984/";
-let dbName = "awrangedb";
+const syncURL = "http://localhost:5984/";
+let dbNamePrefix = "awrangedb";
 
 let dbPromise = null;
 
 const _create = async (userDetails) => {
   //removeRxDatabase(dbName, getRxStoragePouch("idb"));
 
-  dbName += "-" + userDetails.user_id;
+  let dbName = dbNamePrefix + md5(userDetails.sub);
+  console.log("DBNAME");
+  console.log(dbName);
 
   const db = await createRxDatabase({
     name: dbName,
@@ -54,7 +57,7 @@ const _create = async (userDetails) => {
     .map((col) => col.name)
     .map((colName) =>
       db[colName].syncCouchDB({
-        remote: syncURL + colName + "-" + userDetails.user_id + "/",
+        remote: syncURL + colName + md5(userDetails.sub) + "/",
         options: {
           live: true,
           retry: true,

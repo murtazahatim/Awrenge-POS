@@ -6,7 +6,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const Sidebar = () => {
   const { logout } = useAuth0();
-  console.log(window.location.origin + "/login");
 
   return (
     <div className="bora__sidebar">

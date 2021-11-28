@@ -42,3 +42,24 @@
     padding: 0.5rem;
   }
 }
+
+@media only screen and (orientation: portrait) {
+  .bora__sidebar-nav_link {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 795px) {
+  .bora__sidebar-nav_link-tag div {
+    margin: 1.5rem 0;
+  }
+}
+
+@media screen and (max-width: 665px) {
+  .bora__sidebar-nav_link-tag img {
+    width: 1.2rem;
+    height: 1.2rem;
+    padding: 0.5rem;
+  }
+}
