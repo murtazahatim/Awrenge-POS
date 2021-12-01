@@ -12,6 +12,7 @@ import { Sidebar, Header } from "./containers";
 import { Provider } from "rxdb-hooks";
 import * as Database from "./DatabaseService";
 import { useAuth0 } from "@auth0/auth0-react";
+import { MenuGrid } from "./components";
 
 function App() {
   const [db, setDb] = useState();
@@ -39,12 +40,19 @@ function App() {
       <div className="App">
         {location.pathname !== "/login" && <Sidebar />}
         <Routes>
-          <Route exact path="/home" element={<Home />} />
           <Route path="/login" element={<LoginScreen />} />
+          <Route exact path="/" element={<Navigate to="/home/" />} />
+
           <Route
             exact
-            path="/"
-            element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
+            path="/home/*"
+            element={
+              isAuthenticated ? (
+                <Home restaurantName={user.name} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
           />
           <Route
             exact

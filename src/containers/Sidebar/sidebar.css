@@ -1,4 +1,5 @@
 .bora__sidebar {
+  position: sticky;
   flex: 1.5;
   display: flex;
   flex-direction: column;

@@ -1,0 +1,52 @@
+.bora__loginscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.bora__loginscreen-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bora__loginscreen-header h1 {
+  font-family: var(--font-family-intro);
+  color: #fff;
+  margin-left: 1rem;
+}
+
+.bora__loginscreen-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bora__loginscreen-logo img {
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
+}
+
+.bora__loginscreen-loginbutton {
+  margin: 2rem;
+  width: 100%;
+  margin-left: 10rem;
+  margin-right: 12rem;
+}
+
+@media screen and (max-width: 500px) {
+  .bora__loginscreen-header h1 {
+    margin-left: 0.5rem;
+    font-size: 24px;
+  }
+
+  .bora__loginscreen-logo img {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.75rem;
+  }
+}

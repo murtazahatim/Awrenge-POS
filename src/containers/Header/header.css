@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-panel);
+  position: sticky;
 }
 
 .bora__header-logo {
@@ -20,9 +21,24 @@
   padding: 0.5rem;
 }
 
-.bora__header-exit {
+.bora__header-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   margin-right: 4rem;
   margin-top: 0.5rem;
+  width: 19%;
+}
+
+.bora__header-order-large {
+  display: block;
+  padding: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.bora__header-order-small {
+  display: none;
 }
 
 .bora__header-exit img {
@@ -36,7 +52,7 @@
 }
 
 @media screen and (max-width: 795px) {
-  .bora__header-exit {
+  .bora__header-icons {
     margin-right: 2rem;
   }
 
@@ -47,6 +63,17 @@
 
 @media screen and (max-width: 665px) {
   .bora__header-exit img {
+    width: 1.2rem;
+    height: 1.2rem;
+    padding: 0.5rem;
+  }
+
+  .bora__header-order-large {
+    display: none;
+  }
+
+  .bora__header-order-small {
+    display: block;
     width: 1.2rem;
     height: 1.2rem;
     padding: 0.5rem;

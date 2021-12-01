@@ -23,8 +23,8 @@ export const mealInventorySchema = {
     mealType: {
       type: "string",
       enum: [
-        "hot",
-        "cold",
+        "allDay",
+        "mainCourse",
         "breakfast",
         "soup",
         "grill",
@@ -40,11 +40,11 @@ export const mealInventorySchema = {
 export const orderInventorySchema = {
   title: "Available Order Inventory Schema",
   description: "Database schema for orders",
-  primaryKey: "id",
+  primaryKey: "orderNumber",
   version: 0,
   type: "object",
   properties: {
-    id: {
+    orderNumber: {
       type: "string",
     },
     orderDate: {
@@ -56,5 +56,22 @@ export const orderInventorySchema = {
       type: "string",
       enum: ["pending", "preparing", "complete"],
     },
+    orderItems: {
+      type: "array",
+      uniqueItems: true,
+      items: {
+        type: "object",
+        properties: {
+          mealIdentifier: {
+            ref: "meals",
+            type: "string",
+          },
+          quantity: {
+            type: "integer",
+          },
+        },
+      },
+    },
   },
+  required: ["orderStatus"],
 };

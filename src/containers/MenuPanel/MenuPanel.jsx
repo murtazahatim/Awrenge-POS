@@ -1,24 +1,41 @@
 import React from "react";
 import "./menupanel.css";
-import { useRxData } from "rxdb-hooks";
+import { MenuHeader, CategoryPanel, MenuGrid } from "../../components";
+import { Route, Routes } from "react-router";
 
-const MenuPanel = () => {
-  const queryConstructor = (collection) =>
-    collection.find().where("mealType").equals("hot");
-
-  const { result: meals, isFetching } = useRxData("meals", queryConstructor);
-
-  if (isFetching) {
-    return "Loading Meal Inventory";
-  }
-
+const MenuPanel = ({ restaurantName }) => {
   return (
     <div className="bora__menupanel">
-      <ul>
-        {meals.map((meal, idx) => (
-          <li key={idx}>{meal.name}</li>
-        ))}
-      </ul>
+      <div className="bora__menupanel-nongrid">
+        <MenuHeader restaurantName={restaurantName} />
+        <CategoryPanel />
+      </div>
+      <Routes>
+        <Route exact path="/" element={<MenuGrid category="allDay" />} />
+        <Route
+          exact
+          path="/main-course"
+          element={<MenuGrid category="mainCourse" />}
+        />
+        <Route
+          exact
+          path="/breakfast"
+          element={<MenuGrid category="breakfast" />}
+        />
+        <Route exact path="/soups" element={<MenuGrid category="soup" />} />
+        <Route exact path="/grill" element={<MenuGrid category="grill" />} />
+        <Route
+          exact
+          path="/appetizers"
+          element={<MenuGrid category="appetizer" />}
+        />
+        <Route
+          exact
+          path="/desserts"
+          element={<MenuGrid category="dessert" />}
+        />
+        <Route exact path="/drinks" element={<MenuGrid category="drinks" />} />
+      </Routes>
     </div>
   );
 };

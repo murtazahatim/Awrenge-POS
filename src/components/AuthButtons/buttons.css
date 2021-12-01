@@ -1,0 +1,17 @@
+#bora__loginbutton {
+  width: matchParent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2.2rem;
+  border: solid 1px #fff;
+}
+
+#bora__loginbutton p {
+  font-family: var(--font-family-intro);
+  color: #fff;
+}
+
+#bora__loginbutton:hover {
+  background-color: var(--color-accent);
+}

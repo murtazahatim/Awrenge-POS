@@ -23,8 +23,6 @@ let dbNamePrefix = "awrangedb";
 let dbPromise = null;
 
 const _create = async (userDetails) => {
-  //removeRxDatabase(dbName, getRxStoragePouch("idb"));
-
   let dbName = dbNamePrefix + md5(userDetails.sub);
   console.log("DBNAME");
   console.log(dbName);

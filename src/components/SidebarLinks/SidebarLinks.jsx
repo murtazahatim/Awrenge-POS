@@ -11,7 +11,7 @@ import {
 const SidebarLinks = () => {
   return (
     <nav className="bora__sidebar-nav_link">
-      <NavLink to="/" className="bora__sidebar-nav_link-tag">
+      <NavLink to="/home" className="bora__sidebar-nav_link-tag">
         <div>
           <img src={home} alt="home" className="bora__icon" />
         </div>

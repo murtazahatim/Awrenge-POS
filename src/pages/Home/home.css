@@ -4,3 +4,21 @@
   justify-content: flex-start;
   align-items: center;
 }
+
+.bora__home-menupanel {
+  flex: 1.75;
+  overflow: hidden;
+  height: 100%;
+}
+
+.bora__home-orderpanel {
+  flex: 0.75;
+  overflow: hidden;
+  height: 100%;
+}
+
+@media only screen and (orientation: portrait) {
+  .bora__home-orderpanel {
+    display: none;
+  }
+}

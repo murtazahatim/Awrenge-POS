@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Poppins:wght@300&display=swap");
 
 :root {
-  --font-family: "Barlow Condensed", sans-serif;
+  --font-family: "Barlow", sans-serif;
+  --font-family-intro: "Poppins", sans-serif;
 
-  --filter-accent: invert(79%) sepia(48%) saturate(4330%) hue-rotate(315deg)
-    brightness(95%) contrast(92%);
+  --filter-accent: invert(54%) sepia(96%) saturate(241%) hue-rotate(336deg)
+    brightness(102%) contrast(92%);
 
   --color-bg: #393c49;
   --color-panel: #1f1d2b;
-  --color-accent: #ea7c69;
+  --color-accent: #eb966a;
   --color-logo-bg: rgb(235, 150, 106, 0.26);
 }

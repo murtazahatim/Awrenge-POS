@@ -1,10 +1,20 @@
 import React from "react";
-import AuthNav from "../../components/auth-nav";
+import logo from "../../assets/logo.svg";
+import "./loginscreen.css";
+import { LoginButton } from "../../components";
 
 const LoginScreen = () => {
   return (
-    <div className="login-screen">
-      <AuthNav />
+    <div className="bora__loginscreen">
+      <div className="bora__loginscreen-header">
+        <div className="bora__loginscreen-logo">
+          <img src={logo} alt="logo" />
+        </div>
+        <h1>Awrenge Software</h1>
+      </div>
+      <div className="bora__loginscreen-loginbutton">
+        <LoginButton />
+      </div>
     </div>
   );
 };
