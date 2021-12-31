@@ -8,7 +8,7 @@ const MenuPanel = ({ restaurantName }) => {
     <div className="bora__menupanel">
       <div className="bora__menupanel-nongrid">
         <MenuHeader restaurantName={restaurantName} />
-        <CategoryPanel />
+        <CategoryPanel parent="Menu" />
       </div>
       <Routes>
         <Route exact path="/" element={<MenuGrid category="allDay" />} />

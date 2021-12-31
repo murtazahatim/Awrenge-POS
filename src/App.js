@@ -74,7 +74,7 @@ function App() {
           />
           <Route
             exact
-            path="/menu-management"
+            path="/menu-management/*"
             element={
               isAuthenticated ? <MenuManagement /> : <Navigate to="/login" />
             }

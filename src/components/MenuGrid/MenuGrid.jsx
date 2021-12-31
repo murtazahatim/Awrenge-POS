@@ -1,9 +1,11 @@
 import React from "react";
 import { useRxData } from "rxdb-hooks";
+import MealCard from "../MealCard/MealCard";
+import './menugrid.css';
 
 const MenuGrid = ({ category }) => {
   const queryConstructor = (collection) =>
-    collection.find().where("mealType").equals("hot");
+    collection.find().where("mealType").equals(category);
 
   const { result: meals, isFetching } = useRxData("meals", queryConstructor);
 
@@ -12,8 +14,19 @@ const MenuGrid = ({ category }) => {
   }
 
   return (
-    <div>
-      <h1>{category}</h1>
+    <div className="bora__menugrid">
+      <div className="bora__menugrid-grid_container">
+        <MealCard name="Fried Potato" inventory="20" price="15" image="https://www.pixelstalk.net/wp-content/uploads/2016/08/Desktop-Food-HD-Photos.jpg"/>
+        <MealCard name="Fried Potato" inventory="20" price="15" image="https://www.pixelstalk.net/wp-content/uploads/2016/08/Desktop-Food-HD-Photos.jpg"/>
+        <MealCard name="Fried Potato" inventory="20" price="15" image="https://www.pixelstalk.net/wp-content/uploads/2016/08/Desktop-Food-HD-Photos.jpg"/>
+        <MealCard name="Fried Potato" inventory="20" price="15" image="https://www.pixelstalk.net/wp-content/uploads/2016/08/Desktop-Food-HD-Photos.jpg"/>
+        <MealCard name="Fried Potato" inventory="20" price="15" image="https://www.pixelstalk.net/wp-content/uploads/2016/08/Desktop-Food-HD-Photos.jpg"/>
+        <MealCard name="Fried Potato" inventory="20" price="15" image="https://www.pixelstalk.net/wp-content/uploads/2016/08/Desktop-Food-HD-Photos.jpg"/>
+        <MealCard name="Fried Potato" inventory="20" price="15" image="https://www.pixelstalk.net/wp-content/uploads/2016/08/Desktop-Food-HD-Photos.jpg"/>
+        <MealCard name="Fried Potato" inventory="20" price="15" image="https://www.pixelstalk.net/wp-content/uploads/2016/08/Desktop-Food-HD-Photos.jpg"/>
+        <MealCard name="Fried Potato" inventory="20" price="15" image="https://www.pixelstalk.net/wp-content/uploads/2016/08/Desktop-Food-HD-Photos.jpg"/>
+        <MealCard name="Fried Potato" inventory="20" price="15" image="https://www.pixelstalk.net/wp-content/uploads/2016/08/Desktop-Food-HD-Photos.jpg"/>
+      </div>
     </div>
   );
 };

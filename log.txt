@@ -3797,3 +3797,12 @@
 [Wed, 01 Dec 2021 18:11:03 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /ordersccd735658865f0552aab2166b53161a6/_changes?style=all_docs&since=0&limit=100 304
 [Wed, 01 Dec 2021 18:11:03 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /mealsccd735658865f0552aab2166b53161a6/_local/W_ABhlQp1ufvc.uu6h9pyg%3D%3D? 304
 [Wed, 01 Dec 2021 18:11:03 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /ordersccd735658865f0552aab2166b53161a6/_local/dLR8tsz8i_NgKJnxd2qnKA%3D%3D? 304
+[Tue, 28 Dec 2021 02:45:01 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Tue, 28 Dec 2021 02:45:01 GMT] [info] [<0.000.0>] database files will be saved to ./db
+[Tue, 28 Dec 2021 02:45:01 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.
+[Thu, 30 Dec 2021 09:34:09 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Thu, 30 Dec 2021 09:34:09 GMT] [info] [<0.000.0>] database files will be saved to ./db
+[Thu, 30 Dec 2021 09:34:09 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.
+[Thu, 30 Dec 2021 11:33:36 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Thu, 30 Dec 2021 11:33:36 GMT] [info] [<0.000.0>] database files will be saved to ./db
+[Thu, 30 Dec 2021 11:33:36 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.

@@ -1,0 +1,18 @@
+.bora__menugrid {
+    display: flex;
+    overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.bora__menugrid::-webkit-scrollbar {
+    display: none;
+  }
+
+.bora__menugrid-grid_container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+  }

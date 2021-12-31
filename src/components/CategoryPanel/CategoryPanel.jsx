@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
-import CategoryPanelLinks from "./CategoryPanelLinks";
+import {CategoryPanelLinksMenu, CategoryPanelLinksMenuManagement} from "./CategoryPanelLinks";
 
-const CategoryPanel = () => {
+const CategoryPanel = ({parent}) => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
     <div className="bora__category">
       <div className="bora__category-div">
-        <CategoryPanelLinks />
+        {parent === "Menu" ? (<CategoryPanelLinksMenu />) : (<CategoryPanelLinksMenuManagement />)}
         <hr size="1" />
       </div>
 
@@ -29,7 +29,7 @@ const CategoryPanel = () => {
 
         {toggleMenu && (
           <div className="bora__category-menu_container scale-up-center">
-            <CategoryPanelLinks />
+            {parent === "Menu" ? (<CategoryPanelLinksMenu />) : (<CategoryPanelLinksMenuManagement />)}
           </div>
         )}
       </div>
